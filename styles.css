@@ -1,0 +1,67 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+/* Кнопки марок */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Контейнер для кнопок років */
+div[id^="years-"] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+/* Контейнер для автомобілів */
+div[id^="cars-"] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Зображення автомобілів */
+img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Текст біля зображень */
+span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
