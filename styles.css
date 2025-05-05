@@ -6,14 +6,12 @@ body {
     color: #333;
 }
 
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    width: 200px;
-    margin-right: 10px;
+h1 {
+    text-align: center;
+    color: #007bff;
 }
 
-/* Кнопки марок */
+/* Кнопки */
 button {
     background-color: #007bff;
     color: white;
@@ -30,20 +28,11 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Контейнер для кнопок років */
-div[id^="years-"] {
+/* Контейнери */
+div[id^="models-"], div[id^="years-"], div[id^="cars-"] {
     margin-top: 10px;
     padding: 10px;
     background-color: #e9ecef;
-    border-radius: 5px;
-}
-
-/* Контейнер для автомобілів */
-div[id^="cars-"] {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
@@ -51,6 +40,7 @@ div[id^="cars-"] {
 img {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
 }
 
 /* Текст біля зображень */
@@ -60,8 +50,38 @@ span {
     color: #555;
 }
 
-#output {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
+/* Галерея */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє переносити елементи на новий рядок */
+    gap: 10px; /* Відступи між елементами */
+    margin-left: 60px; /* Відступ зліва */
+}
+
+/* Елемент галереї */
+.gallery-item {
+    flex: 0 1 calc(25% - 10px); /* Ширина елемента: 25% мінус відступ */
+    box-sizing: border-box; /* Враховує padding і border у ширині */
+    margin-bottom: 10px; /* Відступ знизу */
+}
+
+.gallery-item img {
+    width: 150px; /* Фіксована ширина */
+    height: auto; /* Пропорційна висота */
+    border-radius: 5px; /* Закруглені кути */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    margin-right: 10px; /* Відступ справа */
+}
+
+/* Таблиця */
+.table {
+    display: table;
+    width: 100%;
+    border-spacing: 10px; /* Відступи між комірками */
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
