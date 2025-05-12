@@ -38,9 +38,24 @@ div[id^="models-"], div[id^="years-"], div[id^="cars-"] {
 
 /* Зображення автомобілів */
 img {
+    display: none;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-right: 10px;
+}
+
+/* Приховати зображення розміром 1x1 піксель */
+img[width="1"][height="1"] {
+    display: none;
+}
+
+/* Приховати зображення, які не завантажилися */
+img:not([src]), img[src=""] {
+    display: none;
+}
+
+img:not([width="1"]):not([height="1"]) {
+    display: block;
 }
 
 /* Текст біля зображень */
@@ -51,7 +66,7 @@ span {
 }
 
 /* Галерея */
-.gallery {
+gallery {
     display: flex;
     flex-wrap: wrap; /* Дозволяє переносити елементи на новий рядок */
     gap: 10px; /* Відступи між елементами */
@@ -84,4 +99,51 @@ span {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+}
+
+/* Стилі для модального вікна */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-nav .prev,
+.lightbox-nav .next {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
 }
