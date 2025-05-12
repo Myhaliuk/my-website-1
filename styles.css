@@ -36,6 +36,29 @@ div[id^="models-"], div[id^="years-"], div[id^="cars-"] {
     border-radius: 5px;
 }
 
+/* Контейнер для зображень */
+#cars-container {
+    display: flex; /* Встановлює горизонтальне розташування елементів */
+    flex-wrap: wrap; /* Дозволяє переносити елементи на новий рядок */
+    gap: 20px; /* Відступи між зображеннями */
+    margin-top: 20px;
+}
+
+/* Стилі для зображень */
+#cars-container img {
+    width: 200px; /* Збільшений розмір зображень */
+    height: auto; /* Пропорційна висота */
+    border-radius: 5px; /* Закруглені кути */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    cursor: pointer; /* Вказівник змінюється на руку при наведенні */
+    transition: transform 0.3s ease; /* Анімація при наведенні */
+}
+
+/* Ефект при наведенні на зображення */
+#cars-container img:hover {
+    transform: scale(1.1); /* Збільшення зображення */
+}
+
 /* Зображення автомобілів */
 img {
     display: none;
@@ -45,7 +68,8 @@ img {
 }
 
 /* Приховати зображення розміром 1x1 піксель */
-img[width="1"][height="1"] {
+img[width="1"][height="1"],
+img[style*="width: 1px"][style*="height: 1px"] {
     display: none;
 }
 
@@ -121,7 +145,7 @@ gallery {
     border-radius: 10px;
 }
 
-.lightbox .close {
+lightbox .close {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -139,7 +163,7 @@ gallery {
     transform: translateY(-50%);
 }
 
-.lightbox-nav .prev,
+lightbox-nav .prev,
 .lightbox-nav .next {
     font-size: 40px;
     color: white;
