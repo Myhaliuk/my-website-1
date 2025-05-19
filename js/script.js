@@ -91,7 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
                                             img.style.marginRight = '10px';
 
                                             // Додаємо обробник для відкриття зображення
-                                            img.addEventListener('click', () => openLightbox(imageUrl));
+                                            img.addEventListener('click', () => openLightbox(imageUrl, `${brand} ${model} ${year}`));
+
+                                            // Додаємо обробник для помилки завантаження
+                                            img.onerror = () => {
+                                                carDiv.remove(); // Видаляємо контейнер із зображенням
+                                            };
+
+                                            // Перевіряємо intrinsic size після завантаження
+                                            img.onload = () => {
+                                                if (img.naturalWidth === 1 && img.naturalHeight === 1) {
+                                                    carDiv.remove(); // Видаляємо контейнер із зображенням
+                                                }
+                                            };
 
                                             carDiv.appendChild(img);
                                             carsContainer.appendChild(carDiv);
@@ -130,10 +142,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     // Відкрити модальне вікно
-    function openLightbox(src) {
+    function openLightbox(src, title) {
         images = Array.from(document.querySelectorAll("#output img")).map(img => img.src);
         currentIndex = images.indexOf(src);
         lightboxImg.src = src;
+
+        // Встановлюємо назву авто
+        const lightboxTitle = document.querySelector(".lightbox-title");
+        lightboxTitle.textContent = title;
+
         lightbox.style.display = "flex";
     }
 

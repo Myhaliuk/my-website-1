@@ -129,7 +129,6 @@ gallery {
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
@@ -137,18 +136,30 @@ gallery {
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    text-align: center;
+    color: white;
+}
+
+.lightbox-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .lightbox-img {
     max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+    max-height: 80%;
+    border: 2px solid white;
 }
 
-lightbox .close {
+.lightbox .close {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 20px;
     font-size: 30px;
     color: white;
     cursor: pointer;
@@ -156,18 +167,21 @@ lightbox .close {
 
 .lightbox-nav {
     position: absolute;
+    top: 50%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    top: 50%;
     transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
 }
 
-lightbox-nav .prev,
+.lightbox-nav .prev {
+    margin-left: 20px;
+}
+
 .lightbox-nav .next {
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    user-select: none;
+    margin-right: 20px;
 }
